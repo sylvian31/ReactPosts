@@ -1,11 +1,19 @@
 import React from 'react'
+import {Link} from 'react-router'
+import { deletePost } from '../actions';
 
-const PostListItem = () => {
+const PostListItem = (props) => {
+    const { post } = props;
     return (
-        <div>
-            <p>element de la list</p>
-        </div>
+        <tr>
+            <td><Link to={`post/${post.id}`} >{post.title}</Link></td>
+            <td><button className="btn btn-danger" onClick={() => deletePost(post)}>Delete</button></td>
+        </tr>
     )
+
+    function deletePost(post){
+        props.deletePostCallBack(post);
+    }
 }
 
 export default PostListItem
