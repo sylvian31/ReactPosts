@@ -22,7 +22,7 @@ class Post extends Component {
         console.log(this.props)
         return (
             <div>
-                {this.renderPostContent()};
+                {this.renderPostContent()}
             </div>
         )
     }
